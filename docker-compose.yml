@@ -1,0 +1,36 @@
+version: "3.3"
+services:
+    web:
+        build:
+            context: ./public
+            dockerfile: Dockerfile
+        container_name: php73
+        depends_on:
+            - db
+        volumes:
+            - ./public:/var/www/html/
+            - ./config/apache2/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+        ports:
+            - 8000:80
+    db:
+        container_name: mysqlB
+        image: mysql:8.0
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: phoenix
+            MYSQL_USER: devuser
+            MYSQL_PASSWORD: devpass
+        volumes:
+            - ./mysql:/var/lib/mysql
+        ports:
+            - 6033:3306
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin
+        environment:
+            PMA_PORT: 6033
+        restart: always
+        ports:
+            - 3000:80

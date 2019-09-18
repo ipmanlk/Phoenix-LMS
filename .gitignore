@@ -1,0 +1,11 @@
+/public/api/vendor/*
+/public/api/config/app.php
+/app/tmp/*
+/app/Config/core.php
+/app/Config/database.php
+/vendors/*
+
+# uploads
+/public/uploads/*.pdf
+
+mysql/*

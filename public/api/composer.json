@@ -1,0 +1,5 @@
+{
+    "require": {
+        "delight-im/router": "^3.1"
+    }
+}
