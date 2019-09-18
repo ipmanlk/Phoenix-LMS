@@ -44,6 +44,7 @@ require_once "../tasks/authChecker.php";
 
 <body>
   <div class="header py-4">
+
     <div class="container">
       <div class="d-flex">
         <a class="header-brand" href="./dash.php">
@@ -51,38 +52,8 @@ require_once "../tasks/authChecker.php";
         </a>
         <div class="d-flex order-lg-2 ml-auto">
 
-          <div class="dropdown d-none d-md-flex">
-            <a class="nav-link icon" data-toggle="dropdown">
-              <i class="fe fe-bell"></i>
-              <span class="nav-unread"></span>
-            </a>
+       
 
-            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-              <a href="#" class="dropdown-item d-flex">
-                <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/male/41.jpg)"></span>
-                <div>
-                  <strong>Nathan</strong> pushed new commit: Fix page load performance issue.
-                  <div class="small text-muted">10 minutes ago</div>
-                </div>
-              </a>
-              <a href="#" class="dropdown-item d-flex">
-                <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/female/1.jpg)"></span>
-                <div>
-                  <strong>Alice</strong> started new task: Tabler UI design.
-                  <div class="small text-muted">1 hour ago</div>
-                </div>
-              </a>
-              <a href="#" class="dropdown-item d-flex">
-                <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/female/18.jpg)"></span>
-                <div>
-                  <strong>Rose</strong> deployed new version of NodeJS REST Api V3
-                  <div class="small text-muted">2 hours ago</div>
-                </div>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item text-center text-muted-dark">Mark all as read</a>
-            </div>
-          </div>
           <div class="dropdown">
             <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
               <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
@@ -112,9 +83,12 @@ require_once "../tasks/authChecker.php";
               </a>
             </div>
 
+
           </div>
 
+
         </div>
+
         <div class="nav-item d-none d-md-flex">
           <a class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#courseEnrollModal">Enroll to a Course</a>
         </div>
@@ -124,10 +98,27 @@ require_once "../tasks/authChecker.php";
       </div>
     </div>
   </div>
+  <div class="header d-lg-flex p-0 collapse show" id="headerMenuCollapse" style="">
+          <div class="container">
+            <div class="row align-items-center">
+            
+              <div class="col-lg order-lg-first">
+                <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+                
+                  <li class="nav-item dropdown">
+                    <a href="#" class="nav-link" data-toggle="modal" data-target="#courseEnrollModal"><i class="fe fe-check-square"></i> Enroll to a Course</a>
+                  </li>
+                  
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
 
   <div class="container">
     <div class="row">
-      <div class="col-8">
+      <div class="col-md-8">
 
         <br>
         <h4> Enrolled Courses </h4>
@@ -137,7 +128,7 @@ require_once "../tasks/authChecker.php";
         </div>
 
       </div>
-      <div class="col-4">
+      <div class="col-md-4">
         <br>
         <h4> Assisgnments and Tests </h4>
         <div class="card">
