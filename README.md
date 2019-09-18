@@ -3,7 +3,7 @@
 ### Setup Local Development Environment
 1. Download Docker Community Edition.
   - For Windows : [Download from Docker Hub](https://docs.docker.com/docker-for-windows/install/) (You have to register).
-  - For Ubuntu 18.04 : [Instructions](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04) (Follow until step 2).
+  - For Ubuntu 18.04 : [Instructions](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04) (Follow until the end of Step 2).
 
 2. Clone this repository using git clone or download as a zip.
 
