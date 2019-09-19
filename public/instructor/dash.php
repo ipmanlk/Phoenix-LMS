@@ -76,7 +76,7 @@ require_once "../tasks/authChecker.php";
               <a class="dropdown-item" href="#">
                 <i class="dropdown-icon fe fe-help-circle"></i> Need help?
               </a>
-              <a class="dropdown-item" href="#">
+              <a class="dropdown-item" href="../tasks/logout.php">
                 <i class="dropdown-icon fe fe-log-out"></i> Sign out
               </a>
             </div>

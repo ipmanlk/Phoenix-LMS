@@ -52,7 +52,7 @@ require_once "../tasks/authChecker.php";
         </a>
         <div class="d-flex order-lg-2 ml-auto">
 
-       
+
 
           <div class="dropdown">
             <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
@@ -78,7 +78,7 @@ require_once "../tasks/authChecker.php";
               <a class="dropdown-item" href="#">
                 <i class="dropdown-icon fe fe-help-circle"></i> Need help?
               </a>
-              <a class="dropdown-item" href="#">
+              <a class="dropdown-item" href="../tasks/logout.php">
                 <i class="dropdown-icon fe fe-log-out"></i> Sign out
               </a>
             </div>
@@ -99,22 +99,22 @@ require_once "../tasks/authChecker.php";
     </div>
   </div>
   <div class="header d-lg-flex p-0 collapse show" id="headerMenuCollapse" style="">
-          <div class="container">
-            <div class="row align-items-center">
-            
-              <div class="col-lg order-lg-first">
-                <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
-                
-                  <li class="nav-item dropdown">
-                    <a href="#" class="nav-link" data-toggle="modal" data-target="#courseEnrollModal"><i class="fe fe-check-square"></i> Enroll to a Course</a>
-                  </li>
-                  
-                  
-                </ul>
-              </div>
-            </div>
-          </div>
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="col-lg order-lg-first">
+          <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="modal" data-target="#courseEnrollModal"><i class="fe fe-check-square"></i> Enroll to a Course</a>
+            </li>
+
+
+          </ul>
         </div>
+      </div>
+    </div>
+  </div>
 
   <div class="container">
     <div class="row">
