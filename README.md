@@ -11,7 +11,7 @@
 
 4. Run ``docker-compose up``. 
 
-5. Goto localhost:8000 to access the  system and localhost:3000 to access the phpmyadmin. 
+5. Goto localhost:80 to access the  system and localhost:3000 to access the phpmyadmin. 
 
 6. Login to phpmyadmin, use "root" and "root" as your username and password.
 

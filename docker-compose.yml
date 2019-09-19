@@ -11,7 +11,7 @@ services:
             - ./public:/var/www/html/
             - ./config/apache2/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
         ports:
-            - 8000:80
+            - 80:80
     db:
         container_name: mysqlB
         image: mysql:8.0
