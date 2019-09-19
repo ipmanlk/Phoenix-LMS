@@ -2,7 +2,7 @@ version: "3.3"
 services:
     web:
         build:
-            context: ./public
+            context: ./docker
             dockerfile: Dockerfile
         container_name: php73
         depends_on:
