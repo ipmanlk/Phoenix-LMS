@@ -1,19 +1,21 @@
 version: "3.3"
 services:
-    web:
+    webserver:
         build:
-            context: ./docker
-            dockerfile: Dockerfile
-        container_name: php73
-        depends_on:
+            context: ./bin/webserver
+        container_name: phoenix-web
+        links:
             - db
         volumes:
-            - ./public:/var/www/html/
+            - ./www:/var/www/html/
+            - ./config/php/php.ini:/usr/local/etc/php/php.ini
+            - ./config/vhosts:/etc/apache2/sites-enabled
+            - ./logs/apache2:/var/log/apache2
         ports:
             - 80:80
             - 443:443
     db:
-        container_name: mysqlB
+        container_name: phoenix-mysql
         image: mysql:8.0
         command: --default-authentication-plugin=mysql_native_password
         restart: always
@@ -23,12 +25,15 @@ services:
             MYSQL_USER: devuser
             MYSQL_PASSWORD: devpass
         volumes:
-            - ./mysql:/var/lib/mysql
+            - ./data/mysql:/var/lib/mysql
+            - ./logs/mysql:/var/log/mysql
         ports:
             - 6033:3306
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
-        container_name: phpmyadmin
+        container_name: phoenix-phpmyadmin
+        links:
+            - db
         environment:
             PMA_PORT: 6033
         restart: always
