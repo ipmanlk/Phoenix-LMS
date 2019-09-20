@@ -5,6 +5,7 @@ services:
             context: ./bin/webserver
         container_name: phoenix-web
         links:
+            - php-composer
             - db
         volumes:
             - ./www:/var/www/html/
@@ -39,3 +40,9 @@ services:
         restart: always
         ports:
             - 3000:80
+    php-composer:
+        image: amd64/composer
+        container_name: phoenix-php-composer
+        command: install
+        volumes: 
+            - ./www/api:/app
