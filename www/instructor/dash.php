@@ -51,7 +51,7 @@ require_once "../tasks/authChecker.php";
         </a>
         <div class="d-flex order-lg-2 ml-auto">
 
-        
+
           <div class="dropdown">
             <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
               <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
@@ -85,43 +85,47 @@ require_once "../tasks/authChecker.php";
 
         </div>
         <div class="nav-item d-none d-md-flex">
-          <a class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#courseModal">Create a new course</a>
+          <a class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#courseModal">
+            New Course
+          </a>
         </div>
         <div class="nav-item d-none d-md-flex">
-          <a class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#testModal">Create a new Test</a>
+          <a class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#testModal">
+            Add Test
+          </a>
         </div>
         <div class="nav-item d-none d-md-flex">
-          <a class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#assignmentModal">Create a new Assignment</a>
+          <a class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#assignmentModal">
+            Add Assignment
+          </a>
         </div>
-        <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
+        <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0  d-md-none" data-toggle="collapse" data-target="#headerMenuCollapse">
           <span class="header-toggler-icon"></span>
         </a>
       </div>
     </div>
   </div>
-  <div class="header d-lg-flex p-0 collapse show" id="headerMenuCollapse" style="">
-          <div class="container">
-            <div class="row align-items-center">
-            
-              <div class="col-lg order-lg-first">
-                <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
-                
-                  <li class="nav-item dropdown">
-                    <a href="#" class="nav-link" data-toggle="modal" data-target="#courseModal"><i class="fe fe-check-square"></i>Create a new course</a>
-                  </li>
-                   <li class="nav-item dropdown">
-                    <a href="#" class="nav-link" data-toggle="modal" data-target="#testModal"><i class="fe fe-check-square"></i> Create a new Test</a>
-                  </li>
-                   <li class="nav-item dropdown">
-                    <a href="#" class="nav-link" data-toggle="modal" data-target="#assignmentModal"><i class="fe fe-check-square"></i>Create a new Assignment</a>
-                  </li>
-                  
-                  
-                </ul>
-              </div>
-            </div>
-          </div>
+  <div class="header d-lg-flex p-0 collapse show" id="headerMenuCollapse">
+    <div class="container">
+      <div class="row align-items-center d-md-none">
+
+        <div class="col-lg order-lg-first">
+          <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="modal" data-target="#courseModal"><i class="fe fe-check-square"></i>Create a new course</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="modal" data-target="#testModal"><i class="fe fe-check-square"></i> Create a new Test</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="modal" data-target="#assignmentModal"><i class="fe fe-check-square"></i>Create a new Assignment</a>
+            </li>
+          </ul>
         </div>
+      </div>
+    </div>
+  </div>
 
   <div class="container">
 

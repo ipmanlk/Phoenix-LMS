@@ -92,13 +92,13 @@ require_once "../tasks/authChecker.php";
         <div class="nav-item d-none d-md-flex">
           <a class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#courseEnrollModal">Enroll to a Course</a>
         </div>
-        <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
+        <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0  d-md-none" data-toggle="collapse" data-target="#headerMenuCollapse">
           <span class="header-toggler-icon"></span>
         </a>
       </div>
     </div>
   </div>
-  <div class="header d-lg-flex p-0 collapse show" id="headerMenuCollapse" style="">
+  <div class="header d-lg-flex p-0 collapse show  d-md-none" id="headerMenuCollapse">
     <div class="container">
       <div class="row align-items-center">
 
@@ -108,8 +108,6 @@ require_once "../tasks/authChecker.php";
             <li class="nav-item dropdown">
               <a href="#" class="nav-link" data-toggle="modal" data-target="#courseEnrollModal"><i class="fe fe-check-square"></i> Enroll to a Course</a>
             </li>
-
-
           </ul>
         </div>
       </div>
