@@ -1,11 +1,15 @@
-/public/api/vendor/*
-/public/api/config/app.php
+/www/api/vendor/*
+/www/api/config/app.php
 /app/tmp/*
 /app/Config/core.php
 /app/Config/database.php
 /vendors/*
 
 # uploads
-/public/uploads/*.pdf
+/www/uploads/*.pdf
 
-mysql/*
+data/*
+!.gitkeep
+
+/logs/*
+!.gitkeep

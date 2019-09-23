@@ -1,19 +1,22 @@
 version: "3.3"
 services:
-    web:
+    webserver:
         build:
-            context: ./public
-            dockerfile: Dockerfile
-        container_name: php73
-        depends_on:
+            context: ./bin/webserver
+        container_name: phoenix-web
+        links:
+            - php-composer
             - db
         volumes:
-            - ./public:/var/www/html/
-            - ./config/apache2/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+            - ./www:/var/www/html/
+            - ./config/php/php.ini:/usr/local/etc/php/php.ini
+            - ./config/vhosts:/etc/apache2/sites-enabled
+            - ./logs/apache2:/var/log/apache2
         ports:
-            - 8000:80
+            - 80:80
+            - 443:443
     db:
-        container_name: mysqlB
+        container_name: phoenix-mysql
         image: mysql:8.0
         command: --default-authentication-plugin=mysql_native_password
         restart: always
@@ -23,14 +26,23 @@ services:
             MYSQL_USER: devuser
             MYSQL_PASSWORD: devpass
         volumes:
-            - ./mysql:/var/lib/mysql
+            - ./data/mysql:/var/lib/mysql
+            - ./logs/mysql:/var/log/mysql
         ports:
             - 6033:3306
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
-        container_name: phpmyadmin
+        container_name: phoenix-phpmyadmin
+        links:
+            - db
         environment:
             PMA_PORT: 6033
         restart: always
         ports:
             - 3000:80
+    php-composer:
+        image: amd64/composer
+        container_name: phoenix-php-composer
+        command: install
+        volumes: 
+            - ./www/api:/app
