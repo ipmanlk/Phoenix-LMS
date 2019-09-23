@@ -146,7 +146,7 @@ require_once "../tasks/authChecker.php";
   
   <div class="form-group">
     <label for="exampleFormControlInput1">New Password</label>
-    <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="">
+    <input type="password" class="form-control" id="exampleFormControlInput1" placeholder=" ">
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Confirm New Password</label>
