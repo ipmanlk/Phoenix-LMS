@@ -51,7 +51,7 @@ require_once "../tasks/authChecker.php";
         </a>
         <div class="d-flex order-lg-2 ml-auto">
 
-        
+
           <div class="dropdown">
             <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
               <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
@@ -80,94 +80,113 @@ require_once "../tasks/authChecker.php";
                 <i class="dropdown-icon fe fe-log-out"></i> Sign out
               </a>
             </div>
-
           </div>
-
         </div>
-       
-       
-     
         <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
           <span class="header-toggler-icon"></span>
         </a>
       </div>
     </div>
   </div>
-  
+
 
   <div class="container">
-
     <br>
     <h4> Profile</h4>
-  
-
-
-  
- 
-
-
     <hr>
     <div class="container">
-  <div class="row">
-    <div class="col-sm">
+      <div class="row">
 
-  <div class="form-group">
-    <label for="exampleFormControlInput1">ID</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-  </div>
 
-  <div class="form-group">
-    <label for="exampleFormControlInput1">First Name</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-  </div>
+        <div class="col-md-6">
+          <div class="jumbotron">
+            <p class="lead">Personal Details</p>
+            <hr class="my-4">
+            <div class="form-group">
+              <label for="txtFName">First Name</label>
+              <input type="text" class="form-control" id="txtFName" placeholder="">
+            </div>
 
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Last Name</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-  </div>
+            <div class="form-group">
+              <label for="txtLName">Last Name</label>
+              <input type="text" class="form-control" id="txtLName" placeholder="">
+            </div>
 
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Email</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-  </div>
+            <div class="form-group">
+              <label for="txtEmail">Email</label>
+              <input type="text" class="form-control" id="txtEmail" placeholder="">
+            </div>
 
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Date of Birth</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-  </div>
+            <div class="form-group">
+              <label for="txtDob">Date of Birth</label>
+              <input type="text" class="form-control" id="txtDob" placeholder="">
+            </div>
 
-</div>
+            <div class="form-group">
+              <label for="txtNic">NIC</label>
+              <input type="text" class="form-control" id="txtNic" placeholder="">
+            </div>
 
-    <div class="col-sm">
-      <div class="jumbotron">
-  
-  <p class="lead">Change Password</p>
-  <hr class="my-4">
-  
-  <div class="form-group">
-    <label for="exampleFormControlInput1">New Password</label>
-    <input type="password" class="form-control" id="exampleFormControlInput1" placeholder=" ">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Confirm New Password</label>
-    <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="">
-  </div>
-  
-</div>
-<center>
-<button class="btn btn-primary">Edit</button>
-<button class="btn btn-success">Save Changes</button>
-</center>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="jumbotron">
+
+            <p class="lead">Change Password</p>
+            <hr class="my-4">
+
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Old Password</label>
+              <input type="password" class="form-control" id="txtOldPass" placeholder=" ">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleFormControlInput1">New Password</label>
+              <input type="password" class="form-control" id="txtNewPass" placeholder=" ">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Confirm New Password</label>
+              <input type="password" class="form-control" id="textNewPassConfirm" placeholder="">
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-success btn-block mb-4">Save Changes</button>
+
     </div>
-   
-  </div>
-</div>
 
   </div>
 
+  <script src="../assets/js/vendors/jquery-3.2.1.min.js"></script>
+  <script src="../js/common.js"></script>
 
-<script src="../assets/js/vendors/jquery-3.2.1.min.js"></script>
+  <script>
+    let docData = {};
+    $(document).ready(() => {
+      setUser();
+      docData["id"] = getQueryVariable("id");
+      getDetails(docData["id"]);
+    });
 
+    const getDetails = (instructor_id) => {
+      request(`/instructor/${instructor_id}`, "GET").then((res) => {
+        console.log(res.res_data);
+        fillData(res.res_data);
+      }).catch(res => {
+        console.log(getResponseMsg(res.error_code));
+      });
+    }
+
+    const fillData = (data) => {
+      $("#txtFName").val(data.fname);
+      $("#txtLName").val(data.lname);
+      $("#txtEmail").val(data.email);
+      $("#txtDob").val(data.dob);
+      $("#txtNic").val(data.nic);
+    }
+  </script>
 </body>
 
 </html>
