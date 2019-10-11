@@ -47,13 +47,15 @@
         test_id: testId
       }
 
+      // lord test
+      getTest(docData["testId"]);
+
+      // save start time
       request(`/student/test`, "POST", data).then((res) => {
         console.log(res);
       }).catch(res => {
         console.log(res);
       });
-
-      getTest(docData["testId"]);
 
       if (getCookie("testId")) {
         if (getCookie("testId") !== docData["testId"]) {
@@ -78,8 +80,10 @@
     const setPageData = (test) => {
       $("#lblTestName").text(test.test_name);
       $("#lblTestDesc").text(test.description);
-      $("#lblTestDuration").text(test.duration);
       $("#lblTestDeadline").text(test.deadline);
+
+      // start timeer
+      startTimer(parseInt(test.duration) * 60, "#lblTestDuration");
     }
 
     const appendQuestions = (questions) => {
@@ -153,6 +157,26 @@
       }).catch(res => {
         console.log(res);
       });
+    }
+
+    const startTimer = (duration, selector) => {
+      let timer = duration,
+        minutes, seconds;
+      const countdown = setInterval(() => {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        $(selector).text(minutes + ":" + seconds);
+
+        if (--timer < 0) {
+          clearInterval(countdown);
+          alert("Sorry!. Duration has been expired. This quiz will now be submitted automatically.");
+          submitTest();
+        }
+      }, 1000);
     }
   </script>
 </body>
