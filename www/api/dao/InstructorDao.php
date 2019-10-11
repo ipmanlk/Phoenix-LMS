@@ -6,6 +6,7 @@ class InstructorDao
     public static function getOne($id)
     {
         $instructor = R::load('instructor', $id);
+        unset($instructor["password"]);
         return $instructor;
     }
 
