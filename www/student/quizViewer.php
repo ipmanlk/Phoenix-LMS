@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../assets/styles.css" type="text/css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <title>Quiz</title>
 </head>
 
 <body>
@@ -67,16 +68,18 @@
       setCookie("testId", docData["testId"], 1);
     }
 
+    // get test questions from backend
     const getTest = (testId) => {
       request(`/test/${testId}`, "GET").then((res) => {
         setPageData(res.res_data.test);
         appendQuestions(res.res_data.questions);
-        checkAnswers();
+        checkSelectedAnswers();
       }).catch(res => {
         console.log(res);
       });
     };
 
+    // set values for top labels
     const setPageData = (test) => {
       $("#lblTestName").text(test.test_name);
       $("#lblTestDesc").text(test.description);
@@ -85,7 +88,8 @@
       // start timeer
       startTimer(parseInt(test.duration) * 60, "#lblTestDuration");
     }
-
+    
+    // append questions on relavnt tabs
     const appendQuestions = (questions) => {
       questions.forEach((data, index) => {
         let defaultOpen;
@@ -133,7 +137,8 @@
       setCookie("answers", JSON.stringify(docData["answers"]), 1);
     }
 
-    const checkAnswers = () => {
+    // check selected answers from cookies and fill them
+    const checkSelectedAnswers = () => {
       if (getCookie("answers")) {
         let answers = JSON.parse(getCookie("answers"));
         docData["answers"] = answers;
@@ -144,6 +149,7 @@
       }
     }
 
+    // submit marked test to the backend
     const submitTest = () => {
       let data = {
         student_id: user.id,
@@ -159,6 +165,7 @@
       });
     }
 
+    // timer for test duration countdown
     const startTimer = (duration, selector) => {
       let timer = duration,
         minutes, seconds;
