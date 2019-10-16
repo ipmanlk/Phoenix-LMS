@@ -63,7 +63,7 @@ require_once "../tasks/authChecker.php";
               </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-              <a class="dropdown-item" href="#">
+         <!--     <a class="dropdown-item" href="#">
                 <i class="dropdown-icon fe fe-user"></i> Profile
               </a>
 
@@ -77,7 +77,7 @@ require_once "../tasks/authChecker.php";
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">
                 <i class="dropdown-icon fe fe-help-circle"></i> Need help?
-              </a>
+              </a> -->
               <a class="dropdown-item" href="../tasks/logout.php">
                 <i class="dropdown-icon fe fe-log-out"></i> Sign out
               </a>

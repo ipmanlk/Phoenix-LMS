@@ -93,7 +93,7 @@
                 <i class="dropdown-icon fe fe-user"></i> Profile
               </a>
 
-              <a class="dropdown-item" href="#">
+          <!--    <a class="dropdown-item" href="#">
                 <span class="float-right"><span class="badge badge-primary">6</span></span>
                 <i class="dropdown-icon fe fe-mail"></i> Inbox
               </a>
@@ -103,7 +103,7 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">
                 <i class="dropdown-icon fe fe-help-circle"></i> Need help?
-              </a>
+              </a> -->
               <a class="dropdown-item" href="#">
                 <i class="dropdown-icon fe fe-log-out"></i> Sign out
               </a>

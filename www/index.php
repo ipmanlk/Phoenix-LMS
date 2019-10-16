@@ -52,7 +52,7 @@
         <a href="./login.php" class="btn btn-light">Login</a>
         <a href="./register.php" class="btn btn-outline-light">Register</a>
         <br>
-        <p class="card-text txtsmallwhite mt-2">By clicking login or register, you are agreeing to our terms and privacy policy </p>
+        <p class="card-text txtsmallwhite mt-2">By clicking login or register, you are agreeing to our <a href="./tos.html"> terms </a> and <a href="./pp_english.html">privacy policy </a> </p>
       </div>
     </div>
   </center>
