@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "./dao/InstructorDao.php";
 require_once "./entitiy/Instructor.php";
 require_once "./lib/extractor/Extractor.php";
@@ -78,7 +79,12 @@ class InstructorController
         $data = Extractor::extractData();
 
         // required fields
-        $required = array("id", "fname", "lname", "email", "dob", "password", "nic");
+        $required = array("id", "fname", "lname", "email", "dob", "oldpassword", "password", "nic");
+
+        // check if user is authenticated to perform this action
+        if (!password_verify($data["oldpassword"], $_SESSION["user_password"])) {
+            return json_encode(array("error_code" => "6"));
+        }
 
         // create new instructor instance
         $instructor = new Instructor();

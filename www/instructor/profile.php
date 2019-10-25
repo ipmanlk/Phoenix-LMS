@@ -194,6 +194,7 @@ require_once "../tasks/authChecker.php";
         email:$("#txtEmail").val(),
         dob:$("#txtDob").val(),
         nic:$("#txtNic").val(),
+        oldpassword: " ",
         password: " "
       }
 
@@ -207,6 +208,7 @@ require_once "../tasks/authChecker.php";
           return;
         }
 
+        data["oldpassword"] = oldPass;
         data["password"] = newPass;
       }
 
@@ -214,6 +216,9 @@ require_once "../tasks/authChecker.php";
         alert("Profile updated!");
         location.reload(); 
       }).catch(res => {
+        if (res.error_code == 6) {
+          alert("Invalid password!");
+        }
         console.log(getResponseMsg(res.error_code));
       });
     }
