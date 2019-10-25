@@ -81,11 +81,6 @@ class InstructorController
         // required fields
         $required = array("id", "fname", "lname", "email", "dob", "oldpassword", "password", "nic");
 
-        // check if user is authenticated to perform this action
-        if (!password_verify($data["oldpassword"], $_SESSION["user_password"])) {
-            return json_encode(array("error_code" => "6"));
-        }
-
         // create new instructor instance
         $instructor = new Instructor();
 
@@ -94,6 +89,11 @@ class InstructorController
                 return json_encode(array("error_code" => "-1"));
             }
             $data[$field] = trim($data[$field]);
+        }
+
+        // check if user is authenticated to perform this action
+        if (!password_verify($data["oldpassword"], $_SESSION["user_password"])) {
+            return json_encode(array("error_code" => "6"));
         }
 
         // set properties
