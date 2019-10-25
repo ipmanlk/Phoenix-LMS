@@ -153,7 +153,7 @@ require_once "../tasks/authChecker.php";
           </div>
         </div>
       </div>
-      <button class="btn btn-success btn-block mb-4">Save Changes</button>
+      <button class="btn btn-success btn-block mb-4" onclick="updateDetails()">Save Changes</button>
 
     </div>
 
@@ -172,7 +172,6 @@ require_once "../tasks/authChecker.php";
 
     const getDetails = (instructor_id) => {
       request(`/instructor/${instructor_id}`, "GET").then((res) => {
-        console.log(res.res_data);
         fillData(res.res_data);
       }).catch(res => {
         console.log(getResponseMsg(res.error_code));
@@ -185,6 +184,38 @@ require_once "../tasks/authChecker.php";
       $("#txtEmail").val(data.email);
       $("#txtDob").val(data.dob);
       $("#txtNic").val(data.nic);
+    }
+
+    const updateDetails = () => {
+      let data = {
+        id:docData["id"],
+        fname:$("#txtFName").val(),
+        lname:$("#txtLName").val(),
+        email:$("#txtEmail").val(),
+        dob:$("#txtDob").val(),
+        nic:$("#txtNic").val(),
+        password: " "
+      }
+
+      let oldPass = $("#txtOldPass").val();
+      let newPass = $("#txtNewPass").val();
+      let newPassConfirm = $("#textNewPassConfirm").val();
+
+      if (oldPass !== "" && newPass !== "" && newPassConfirm !== "") {
+        if (newPass !== newPassConfirm) {
+          alert("Passwords doesn't match!");
+          return;
+        }
+
+        data["password"] = newPass;
+      }
+
+      request(`/instructor`, "PUT", data).then((res) => {
+        alert("Profile updated!");
+        location.reload(); 
+      }).catch(res => {
+        console.log(getResponseMsg(res.error_code));
+      });
     }
   </script>
 </body>
