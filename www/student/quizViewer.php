@@ -86,7 +86,12 @@
       $("#lblTestDeadline").text(test.deadline);
 
       // start timeer
-      startTimer(parseInt(test.duration) * 60, "#lblTestDuration");
+      if (parseInt(test.duration) !== 0) {
+        startTimer(parseInt(test.duration) * 60, "#lblTestDuration");
+      } else {
+        $("#lblTestDuration").text("∞");
+      }
+      
     }
     
     // append questions on relavnt tabs
