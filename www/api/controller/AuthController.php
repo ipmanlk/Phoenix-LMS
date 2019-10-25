@@ -48,6 +48,7 @@ class AuthController
                 $_SESSION["user_type"] = $data["type"];
                 $_SESSION["user_email"] = $user["email"];
                 $_SESSION["user_name"] = $user["fname"] . " " . $user["lname"];
+                $_SESSION["user_password"] = $user["password"];
                 setcookie("user", json_encode(array("id" => $user["id"], "type" => $data["type"], "name" => $user["fname"] . " " . $user["lname"], "email" => $user["email"])), 0, "/");
                 return json_encode(array("res_code" => "0", "res_data" => ""));
             } else {
