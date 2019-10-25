@@ -77,7 +77,7 @@ class StudentController
         $data = Extractor::extractData();
 
         // required fields
-        $required = array("id", "fname", "lname", "email", "dob", "password", "nic");
+        $required = array("id", "fname", "lname", "email", "dob", "oldpassword", "password", "nic");
 
         // create new student instance
         $student = new Student();
@@ -87,6 +87,11 @@ class StudentController
                 return json_encode(array("error_code" => "-1"));
             }
             $data[$field] = trim($data[$field]);
+        }
+
+        // check if user is authenticated to perform this action
+        if (!password_verify($data["oldpassword"], $_SESSION["user_password"])) {
+            return json_encode(array("error_code" => "6"));
         }
 
         // set properties
