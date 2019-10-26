@@ -56,7 +56,7 @@ require_once "../tasks/authChecker.php";
 
           <div class="dropdown">
             <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
-              <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
+              <span class="avatar" style="background-image: url(../assets/images/profile.png)"></span>
               <span class="ml-2 d-none d-lg-block">
                 <span class="text-default"><?php echo $_SESSION["user_email"] ?></span>
                 <small class="text-muted d-block mt-1">Student</small>
