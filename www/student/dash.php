@@ -199,58 +199,9 @@ require_once "../tasks/authChecker.php";
       </div>
     </div>
     <hr>
-    <h4> Your Progress </h4>
+   
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm">
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title">Tests</h4> <a class="btn btn-sm btn-outline-primary margin5px txtw "> Generate Report </a>
-            </div>
-            <table class="table card-table">
-              <tbody>
-                <tr>
-
-                  <td>Python Test</td>
-                  <td class="text-right"><span class="text-muted">23%</span></td>
-                </tr>
-                <tr>
-
-                  <td>C Test</td>
-                  <td class="text-right"><span class="text-muted">50%</span></td>
-                </tr>
-
-              </tbody>
-            </table>
-
-
-          </div>
-        </div>
-        <div class="col-sm">
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title">Assignments </h4> <a class="btn btn-sm btn-outline-primary margin5px txtw"> Generate Report </a>
-            </div>
-            <table class="table card-table">
-              <tbody>
-                <tr>
-
-                  <td>Python Test</td>
-                  <td class="text-right"><span class="text-muted">23%</span></td>
-                </tr>
-                <tr>
-
-                  <td>C Test</td>
-                  <td class="text-right"><span class="text-muted">50%</span></td>
-                </tr>
-
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
+  
   </div>
 
   <!-- api logic -->
