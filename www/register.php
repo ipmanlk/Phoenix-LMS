@@ -11,7 +11,7 @@
 
   <link rel="stylesheet" href="assets/styles.css" type="text/css">
 
-
+  <title>Phoenix: Register</title>
 </head>
 
 <body class="bodybg">
