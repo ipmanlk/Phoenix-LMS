@@ -122,19 +122,6 @@ require_once "../tasks/authChecker.php";
             </div>
             <table class="table card-table">
               <tbody id="assignmentList">
-                <tr>
-                  <td>OOP Concepts</td>
-                  <td class="text-right txtwhite"><a class="btn btn-primary">View Result </a></td>
-                </tr>
-                <td>UI/UX Designing</td>
-                <td class="text-right txtwhite"><a class="btn btn-primary">View Result </a></td>
-                </tr>
-                <td>UI/UX Designing</td>
-                <td class="text-right txtwhite"><a class="btn btn-primary">View Result </a></td>
-                </tr>
-                <td>UI/UX Designing</td>
-                <td class="text-right txtwhite"><a class="btn btn-primary">View Result </a></td>
-                </tr>
 
               </tbody>
             </table>
@@ -146,20 +133,6 @@ require_once "../tasks/authChecker.php";
             </div>
             <table class="table card-table">
               <tbody id="testList">
-                <tr>
-
-                  <td>Quiz 1</td>
-                  <td class="text-right txtwhite"><a class="btn btn-primary">View Result </a></td>
-                </tr>
-                <td>UI/UX Designing</td>
-                <td class="text-right txtwhite"><a class="btn btn-primary">View Result </a></td>
-                </tr>
-                <td>UI/UX Designing</td>
-                <td class="text-right txtwhite"><a class="btn btn-primary">View Result </a></td>
-                </tr>
-                <td>UI/UX Designing</td>
-                <td class="text-right txtwhite"><a class="btn btn-primary">View Result </a></td>
-                </tr>
 
               </tbody>
             </table>

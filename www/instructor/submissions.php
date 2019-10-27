@@ -99,10 +99,6 @@ require_once "../tasks/authChecker.php";
         <br>
         <div class="card">
             <div class="card-body p-3 text-center">
-                <div class="text-right text-green">
-                    6%
-                    <i class="fe fe-chevron-up"></i>
-                </div>
                 <div class="h1 m-0" id="lblSubmissionCount">43</div>
                 <div class="text-muted mb-4">Number of Submission</div>
             </div>
