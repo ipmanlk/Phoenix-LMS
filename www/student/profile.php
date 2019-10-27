@@ -44,6 +44,7 @@ require_once "../tasks/authChecker.php";
 
 <body>
   <div class="header py-4">
+
     <div class="container">
       <div class="d-flex">
         <a class="header-brand" href="./dash.php">
@@ -53,9 +54,9 @@ require_once "../tasks/authChecker.php";
 
 
 
-        <div class="dropdown">
+          <div class="dropdown">
             <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
-              <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
+              <span class="avatar" style="background-image: url(../assets/images/profile.png)"></span>
               <span class="ml-2 d-none d-lg-block">
                 <span class="text-default"><?php echo $_SESSION["user_email"] ?></span>
                 <small class="text-muted d-block mt-1">Student</small>
@@ -69,15 +70,22 @@ require_once "../tasks/authChecker.php";
                 <i class="dropdown-icon fe fe-log-out"></i> Sign out
               </a>
             </div>
+
+
           </div>
+
+
         </div>
-        <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
+
+        <div class="nav-item d-none d-md-flex">
+          <a class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#courseEnrollModal">Enroll to a Course</a>
+        </div>
+        <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0  d-md-none" data-toggle="collapse" data-target="#headerMenuCollapse">
           <span class="header-toggler-icon"></span>
         </a>
       </div>
     </div>
   </div>
-
 
   <div class="container">
     <br>
@@ -177,12 +185,12 @@ require_once "../tasks/authChecker.php";
 
     const updateDetails = () => {
       let data = {
-        id:docData["id"],
-        fname:$("#txtFName").val(),
-        lname:$("#txtLName").val(),
-        email:$("#txtEmail").val(),
-        dob:$("#txtDob").val(),
-        nic:$("#txtNic").val(),
+        id: docData["id"],
+        fname: $("#txtFName").val(),
+        lname: $("#txtLName").val(),
+        email: $("#txtEmail").val(),
+        dob: $("#txtDob").val(),
+        nic: $("#txtNic").val(),
         oldpassword: " ",
         password: " "
       }
@@ -203,7 +211,7 @@ require_once "../tasks/authChecker.php";
 
       request(`/student`, "PUT", data).then((res) => {
         alert("Profile updated!");
-        location.reload(); 
+        location.reload();
       }).catch(res => {
         if (res.error_code == 6) {
           alert("Invalid password!");
