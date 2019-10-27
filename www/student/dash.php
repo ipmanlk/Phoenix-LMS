@@ -63,7 +63,7 @@ require_once "../tasks/authChecker.php";
               </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-              <a class="dropdown-item" href="./profile.php">
+              <a class="dropdown-item" href="./profile.php?id=<?php echo $_SESSION["user_id"]?>">
                 <i class="dropdown-icon fe fe-user"></i> Profile
               </a>
               <a class="dropdown-item" href="../tasks/logout.php">
